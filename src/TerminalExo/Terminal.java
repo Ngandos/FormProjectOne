@@ -1,10 +1,10 @@
 package TerminalExo;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.Scanner;
 
 public class Terminal {
-
-    private static Object LocalDateTime;
 
     public static void main(String[] args) {
 
@@ -121,7 +121,7 @@ public class Terminal {
 
             } else if (saisi.equals("time")) {
 
-                System.out.println();
+                System.out.println(LocalDateTime.now());
 
             } else if (saisi.equals("clear")) {
 
