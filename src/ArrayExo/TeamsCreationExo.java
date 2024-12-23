@@ -59,37 +59,36 @@ public class TeamsCreationExo {
         FourthTeam[4] = new String("");
 
         // Tableau des équipes
+
         String[][] teams = {FirstTeam, SecondTeam, ThirdTeam, FourthTeam};
 
         // Appel des méthodes pour remplir et afficher les équipes
+
         remplirEquipes(teams, FastersPersons, HeavyFasterPersons, LowerPersons);
         afficherEquipes(teams);
     }
 
     public static void remplirEquipes(String[][] teams, String[] FastersPersons, String[] HeavyFasterPersons, String[] LowerPersons) {
-    // Compteur pour suivre combien de fois une personne a été assignée à une équipe
+
         Map<String, Integer> compteurPersonnes = new HashMap<>();
         initialiserCompteur(compteurPersonnes, FastersPersons);
         initialiserCompteur(compteurPersonnes, HeavyFasterPersons);
         initialiserCompteur(compteurPersonnes, LowerPersons);
 
-    // Choisir une personne spécifique pour apparaître dans deux équipes
-        String personneDouble = LowerPersons[0]; // Exemple : Jin
+        String personneDouble = LowerPersons[0];
         compteurPersonnes.put(personneDouble, 0);
 
-    // Remplir les trois premières équipes
         for (int i = 0; i < teams.length - 1; i++) {
             teams[i][0] = choisirEtAssigner(FastersPersons, compteurPersonnes);
             teams[i][1] = choisirEtAssigner(HeavyFasterPersons, compteurPersonnes);
             teams[i][2] = choisirEtAssigner(LowerPersons, compteurPersonnes);
         }
-
-    // Remplir la quatrième équipe
+        
         teams[3][0] = choisirEtAssigner(FastersPersons, compteurPersonnes);
         teams[3][1] = choisirEtAssigner(HeavyFasterPersons, compteurPersonnes);
         teams[3][2] = choisirEtAssigner(LowerPersons, compteurPersonnes);
-        teams[3][3] = choisirEtAssigner(LowerPersons, compteurPersonnes); // Une autre personne du groupe Lower
-        teams[3][4] = personneDouble; // Ajouter la personne double dans la dernière équipe
+        teams[3][3] = choisirEtAssigner(LowerPersons, compteurPersonnes);
+        teams[3][4] = personneDouble;
     }
 
     private static String choisirEtAssigner(String[] group, Map<String, Integer> compteur) {
@@ -99,7 +98,7 @@ public class TeamsCreationExo {
                 return personne;
             }
         }
-        return null; // Cela ne devrait pas arriver
+        return null;
     }
 
     private static void initialiserCompteur(Map<String, Integer> compteur, String[] persons) {
@@ -113,11 +112,11 @@ public class TeamsCreationExo {
         for (int i = 0; i < teams.length; i++) {
             System.out.println(nomsEquipes[i] + ": ");
             for (String personne : teams[i]) {
-                if (personne != null) { // Ne pas afficher les cases vides
+                if (personne != null) {
                     System.out.print(personne + " ");
                 }
             }
-            System.out.println(); // Retour à la ligne après chaque équipe
+            System.out.println();
         }
     }
 }

@@ -1,41 +1,59 @@
 package TerminalExo;
 
-import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Terminal {
 
     public static void main(String[] args) {
 
-        System.out.println("Bienvenue dans le terminal simulé ! entrez Help pour voir les commandes disponibles");
+        Scanner scanner = new Scanner(System.in);
 
-        String commandes[];
+        System.out.println("Saisissez votre prenom : ");
 
-        commandes = new String[5];
+        System.out.println();
 
-        commandes[0] = new String("help");
-        commandes[1] = new String("time");
-        commandes[2] = new String("math");
-        commandes[3] = new String("clear");
-        commandes[4] = new String("exit");
+        String prenom = scanner.next();
 
-        String operation[];
+        System.out.println();
 
-        operation = new String[4];
+        System.out.println("Bonjour " + prenom + ", bienvenue dans le terminal simulé ! entrez Help pour voir les commandes disponibles");
 
-        operation[0] = new String("+");
-        operation[1] = new String("-");
-        operation[2] = new String("*");
-        operation[3] = new String("/");
+        ArrayList<String> command = new ArrayList<>();
+        command.add("help");
+        command.add("time");
+        command.add("math");
+        command.add("todo");
+        command.add("clear");
+        command.add("exit");
+
+        ArrayList<String> operation = new ArrayList<>();
+        operation.add("+");
+        operation.add("-");
+        operation.add("*");
+        operation.add("/");
+
+        ArrayList<String> todolist = new ArrayList<>();
+
+        ArrayList<String> todoMenu = new ArrayList<>();
+        todoMenu.add("add");
+        todoMenu.add("remove");
+        todoMenu.add("display");
+        todoMenu.add("end");
+
 
         boolean continuer = true;
 
-        Scanner scanner = new Scanner(System.in);
+        boolean continu = true;
 
         do {
 
+            System.out.println();
+
             System.out.println("Saisir une commande : ");
+
+            System.out.println();
 
             String saisi = scanner.next();
 
@@ -58,6 +76,8 @@ public class Terminal {
             } else if (saisi.equals("math")) {
 
                 System.out.println("Quelle opération voulez vous réaliser ? :");
+
+                System.out.println();
 
                 String saisie = scanner.next();
 
@@ -119,7 +139,73 @@ public class Terminal {
 
                 }
 
+            } else if (saisi.equals("todo")) {
+
+                do {
+
+                    System.out.println();
+
+                    System.out.println("Que voulez vous faire ? :");
+
+                    System.out.println();
+
+                    saisi = scanner.next();
+
+                    if (saisi.equals("display")) {
+
+                        System.out.println();
+
+                        System.out.println(todolist);
+
+                    } else if (saisi.equals("add")) {
+
+                        System.out.println();
+
+                        System.out.println("Ajouter une tache :");
+
+                        System.out.println();
+
+                        String tache = scanner.next();
+
+                        todolist.add(tache);
+
+                        System.out.println();
+
+                        System.out.println(todolist);
+
+                    } else if (saisi.equals("remove")) {
+
+                        System.out.println("Supprimer une tâche");
+
+                        System.out.println();
+
+                        saisi = scanner.next();
+
+                        todolist.remove("");
+
+                        System.out.println();
+
+                        System.out.println(todolist);
+
+                    } else if (saisi.equals("end")) {
+
+                        System.out.println();
+
+                        System.out.println("Vous quittez le menu todo");
+
+                        continu = false;
+
+                    } else {
+
+                        System.out.println("Commande invalide tappez todo pour voir la liste des commande ");
+
+                    }
+
+                } while (continu);
+
             } else if (saisi.equals("time")) {
+
+                System.out.println();
 
                 System.out.println(LocalDateTime.now());
 
@@ -137,6 +223,8 @@ public class Terminal {
 
             } else if (saisi.equals("exit")) {
 
+                System.out.println();
+
                 System.out.println("Au revoir...");
 
                 scanner.close();
@@ -144,6 +232,8 @@ public class Terminal {
                 continuer = false;
 
             } else {
+
+                System.out.println();
 
                 System.out.println("Commande invalide, tappez help pour voir la liste des commandes : ");
 
