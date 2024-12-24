@@ -42,6 +42,7 @@ public class Terminal {
         todoMenu.add("display");
         todoMenu.add("end");
 
+        ArrayList<String> commandList = new ArrayList<>();
 
         boolean continuer = true;
 
@@ -175,17 +176,35 @@ public class Terminal {
 
                     } else if (saisi.equals("remove")) {
 
+                        System.out.println();
+
                         System.out.println("Supprimer une tâche");
 
                         System.out.println();
 
-                        saisi = scanner.next();
-
-                        todolist.remove("");
+                        System.out.println("Entrez le nom de la tâche à supprimer : ");
 
                         System.out.println();
 
-                        System.out.println(todolist);
+                        String tacheASupprimer = scanner.next();
+
+                        if (todolist.contains(tacheASupprimer)) {
+
+                            todolist.remove(tacheASupprimer);
+
+                            System.out.println();
+
+                            System.out.println("Tâche supprimée avec succés !");
+
+                            System.out.println();
+
+                        } else {
+
+                            System.out.println("Aucune tâche trouvé avec cette chaine de caractères");
+                            
+                        }
+
+                        System.out.println("Tâches restantes : " + todolist);
 
                     } else if (saisi.equals("end")) {
 
