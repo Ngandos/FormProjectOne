@@ -1,7 +1,6 @@
-package ExercicesFichiers;
+package ExercicesFichiers.CRUDExos;
 
 import java.io.BufferedWriter;
-import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 
@@ -11,7 +10,7 @@ public class FileCreateExo1 {
 
         try {
 
-            FileWriter fW = new FileWriter("/Users/ngandos/GitHub/FormProjectOne/src/ExercicesFichiers/output.txt");
+            FileWriter fW = new FileWriter("/Users/ngandos/GitHub/FormProjectOne/src/ExercicesFichiers/CreatedFiles/output.txt");
 
             BufferedWriter bf = new BufferedWriter(fW);
 

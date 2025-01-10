@@ -1,0 +1,7 @@
+Employés à temps plein:
+EmployesTempPlein {id = 1, nom = 'Ngando', workerIdentifiant = 'NgDvFS-01', salaireHr = 25.0, nbrHeures = 35.0, salaire = 3500.0}
+EmployesTempPlein {id = 2, nom = 'Kimia', workerIdentifiant = 'KiDtEng-02', salaireHr = 45.5, nbrHeures = 35.0, salaire = 6300.0}
+EmployesTempPlein {id = 3, nom = 'Nzola', workerIdentifiant = 'NzSOC-01', salaireHr = 50.0, nbrHeures = 35.0, salaire = 7000.0}
+
+Employés à temps partiel:
+EmployesTempPartiel {id = 1, nom = 'Nguma', workerIdentifiant = 'tPNgDvFS-01', salaireFixe = 2950.0}

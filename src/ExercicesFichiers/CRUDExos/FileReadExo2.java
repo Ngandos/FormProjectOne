@@ -1,4 +1,4 @@
-package ExercicesFichiers;
+package ExercicesFichiers.CRUDExos;
 
 import java.io.*;
 
@@ -6,9 +6,11 @@ public class FileReadExo2 {
 
     public static void main(String[] args) {
 
+        //.........................................Writer...............................................................
+
         try {
 
-            FileWriter fW = new FileWriter("/Users/ngandos/GitHub/FormProjectOne/src/ExercicesFichiers/data.txt");
+            FileWriter fW = new FileWriter("/Users/ngandos/GitHub/FormProjectOne/src/ExercicesFichiers/CreatedFiles/data.txt");
 
             BufferedWriter bf = new BufferedWriter(fW);
 
@@ -27,9 +29,11 @@ public class FileReadExo2 {
 
         }
 
+        //.....................................Reader...................................................................
+
         try {
 
-            FileReader fR = new FileReader("/Users/ngandos/GitHub/FormProjectOne/src/ExercicesFichiers/data.txt");
+            FileReader fR = new FileReader("/Users/ngandos/GitHub/FormProjectOne/src/ExercicesFichiers/CreatedFiles/data.txt");
 
             BufferedReader bR = new BufferedReader(fR);
 
