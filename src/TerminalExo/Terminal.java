@@ -1,6 +1,7 @@
 package TerminalExo;
 
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -26,6 +27,8 @@ public class Terminal {
         command.add("math");
         command.add("todo");
         command.add("clear");
+        command.add("history");
+        command.add("HistoClear");
         command.add("exit");
 
         ArrayList<String> operation = new ArrayList<>();
@@ -37,6 +40,7 @@ public class Terminal {
         ArrayList<String> todolist = new ArrayList<>();
 
         ArrayList<String> todoMenu = new ArrayList<>();
+        todoMenu.add("TodoHelp");
         todoMenu.add("add");
         todoMenu.add("remove");
         todoMenu.add("display");
@@ -45,8 +49,6 @@ public class Terminal {
         ArrayList<String> commandList = new ArrayList<>();
 
         boolean continuer = true;
-
-        boolean continu = true;
 
         do {
 
@@ -58,6 +60,8 @@ public class Terminal {
 
             String saisi = scanner.next();
 
+            commandList.add(saisi);
+
             if (saisi.equals("help")) {
 
                 System.out.println("---------- Commandes List ----------");
@@ -68,13 +72,21 @@ public class Terminal {
                 System.out.println();
                 System.out.println("math");
                 System.out.println();
+                System.out.println("random");
+                System.out.println();
                 System.out.println("clear");
+                System.out.println();
+                System.out.println("history");
+                System.out.println();
+                System.out.println("clearHisto");
                 System.out.println();
                 System.out.println("exit");
                 System.out.println();
                 System.out.println("---------- Commandes List ----------");
 
             } else if (saisi.equals("math")) {
+
+                System.out.println();
 
                 System.out.println("Quelle opération voulez vous réaliser ? :");
 
@@ -112,57 +124,91 @@ public class Terminal {
 
                 } else if (saisie.equals("*")) {
 
+                    System.out.println();
+
                     System.out.println("entrez le premier nombre1 : ");
+
+                    System.out.println();
 
                     int nombre1 = scanner.nextInt();
 
+                    System.out.println();
+
                     System.out.println("Entrez le segond nombre2 : ");
+
+                    System.out.println();
 
                     int nombre2 = scanner.nextInt();
 
                     int nbr3 = nombre1 * nombre2;
 
+                    System.out.println();
+
                     System.out.println("Le resultat de votre operation est : " + nbr3 );
 
                 } else if (saisie.equals("/")) {
 
+                    System.out.println();
+
                     System.out.println("entrez le premier nombre1 : ");
+
+                    System.out.println();
 
                     int nombre1 = scanner.nextInt();
 
+                    System.out.println();
+
                     System.out.println("Entrez le segond nombre2 : ");
+
+                    System.out.println();
 
                     int nombre2 = scanner.nextInt();
 
                     int nbr3 = nombre1 / nombre2;
 
+                    System.out.println();
+
                     System.out.println("Le resultat de votre operation est : " + nbr3 );
 
                 }
 
+            } else if (saisi.equals("random")) {
+
+                System.out.println();
+
             } else if (saisi.equals("todo")) {
+
+                boolean continu = true;
 
                 do {
 
                     System.out.println();
 
-                    System.out.println("Que voulez vous faire ? :");
+                    System.out.println("Que voulez vous faire ? : ");
 
                     System.out.println();
 
-                    saisi = scanner.next();
+                    String todoCommand = scanner.next();
 
-                    if (saisi.equals("display")) {
+                    commandList.add("todo " + todoCommand);
 
-                        System.out.println();
-
-                        System.out.println(todolist);
-
-                    } else if (saisi.equals("add")) {
+                    if (todoCommand.equals("display")) {
 
                         System.out.println();
 
-                        System.out.println("Ajouter une tache :");
+                        System.out.println("Tâches : " + todolist);
+
+                    } else if (todoCommand.equals("todoHelp")) {
+
+                        System.out.println();
+
+                        System.out.println(todoMenu);
+
+                    } else if (todoCommand.equals("add")) {
+
+                        System.out.println();
+
+                        System.out.println("Ajouter une tâche : ");
 
                         System.out.println();
 
@@ -172,9 +218,9 @@ public class Terminal {
 
                         System.out.println();
 
-                        System.out.println(todolist);
+                        System.out.println("Tâche ajoutée : " + tache);
 
-                    } else if (saisi.equals("remove")) {
+                    } else if (todoCommand.equals("remove")) {
 
                         System.out.println();
 
@@ -194,19 +240,19 @@ public class Terminal {
 
                             System.out.println();
 
-                            System.out.println("Tâche supprimée avec succés !");
+                            System.out.println("Tâche supprimée avec succés ! : " + tacheASupprimer);
 
                             System.out.println();
 
                         } else {
 
-                            System.out.println("Aucune tâche trouvé avec cette chaine de caractères");
+                            System.out.println("Tâche introuvable.");
                             
                         }
 
                         System.out.println("Tâches restantes : " + todolist);
 
-                    } else if (saisi.equals("end")) {
+                    } else if (todoCommand.equals("end")) {
 
                         System.out.println();
 
@@ -226,7 +272,16 @@ public class Terminal {
 
                 System.out.println();
 
-                System.out.println(LocalDateTime.now());
+                LocalDateTime now = LocalDateTime.now();
+
+                // Définir un format pour la date et l'heure
+                DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");
+
+                // Formater la date et l'heure
+                String formattedDateTime = now.format(formatter);
+
+                // Afficher la date et l'heure formatées
+                System.out.println("Date et heure actuelles formatées : " + formattedDateTime);
 
             } else if (saisi.equals("clear")) {
 
@@ -239,6 +294,28 @@ public class Terminal {
                 System.out.println();
                 System.out.println();
                 System.out.println();
+
+            } else if (saisi.equals("history")) {
+
+                System.out.println();
+
+                System.out.println("historique des commandes : ");
+
+                System.out.println();
+
+                for (String cmd : commandList) {
+
+                    System.out.println(cmd);
+
+                }
+
+            } else if (saisi.equals("clearHisto")) {
+
+                System.out.println();
+
+                commandList.clear();
+
+                System.out.println("Historique des commandes supprimée !");
 
             } else if (saisi.equals("exit")) {
 
