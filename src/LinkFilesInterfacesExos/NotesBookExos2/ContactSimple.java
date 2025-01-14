@@ -22,16 +22,8 @@ public class ContactSimple implements Contacts {
         this.id = id;
     }
 
-    public String getNom() {
-        return nom;
-    }
-
     public void setNom(String nom) {
         this.nom = nom;
-    }
-
-    public String getNbrPhone() {
-        return nbrPhone;
     }
 
     public void setNbrPhone(String nbrPhone) {
@@ -47,12 +39,22 @@ public class ContactSimple implements Contacts {
     }
 
     @Override
+    public String getNom() {
+        return null;
+    }
+
+    @Override
+    public String getNbrPhone() {
+        return null;
+    }
+
+    @Override
     public String toString() {
         return "ContactSimple{" +
-                "id=" + id +
-                ", nom='" + nom + '\'' +
-                ", nbrPhone='" + nbrPhone + '\'' +
-                ", adress='" + adress + '\'' +
+                "id = " + id +
+                ", nom = '" + nom + '\'' +
+                ", nbrPhone = '" + nbrPhone + '\'' +
+                ", adress = '" + adress + '\'' +
                 '}';
     }
 }

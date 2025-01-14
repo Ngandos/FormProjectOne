@@ -1,0 +1,4 @@
+Scores :
+[FileLogger{id = 1, message = 'Une erreur est survenue'}, FileLogger{id = 2, message = 'Ecriture impossible'}, FileLogger{id = 3, message = 'Fichier inexistant'}]
+[FileLogger{id = 1, message = 'Une erreur est survenue'}, FileLogger{id = 2, message = 'Ecriture impossible'}, FileLogger{id = 3, message = 'Fichier inexistant'}]
+[FileLogger{id = 1, message = 'Une erreur est survenue'}, FileLogger{id = 2, message = 'Ecriture impossible'}, FileLogger{id = 3, message = 'Fichier inexistant'}]

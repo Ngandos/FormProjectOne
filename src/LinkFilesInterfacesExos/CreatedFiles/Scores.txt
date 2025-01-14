@@ -1,0 +1,4 @@
+Scores :
+[ScoreManagerFile{id=1, nom='Ngando', score=55}, ScoreManagerFile{id=2, nom='Kimia', score=75}, ScoreManagerFile{id=3, nom='Nzola', score=100}]
+[ScoreManagerFile{id=1, nom='Ngando', score=55}, ScoreManagerFile{id=2, nom='Kimia', score=75}, ScoreManagerFile{id=3, nom='Nzola', score=100}]
+[ScoreManagerFile{id=1, nom='Ngando', score=55}, ScoreManagerFile{id=2, nom='Kimia', score=75}, ScoreManagerFile{id=3, nom='Nzola', score=100}]

@@ -42,6 +42,9 @@ public class Main {
 
                 bf.write(tpWorker.toString() + "\n");
             }
+
+            bf.close();
+
             System.out.println();
 
             System.out.println("Fichier écrit avec succès." );

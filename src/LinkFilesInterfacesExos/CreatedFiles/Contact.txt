@@ -1,0 +1,4 @@
+Contacts :
+ContactSimple{id=1, nom='Kimia', nbrPhone='07.94.32.45.55', adress='Rue de hrtemel 59000 Roubaix'}
+ContactSimple{id=2, nom='Nzola', nbrPhone='07.89.46.34.21', adress='Rue de haven 59000 Roubaix'}
+ContactSimple{id=3, nom='Ngando', nbrPhone='07.82.19.44.68', adress='Rue de haven 59000 Roubaix'}

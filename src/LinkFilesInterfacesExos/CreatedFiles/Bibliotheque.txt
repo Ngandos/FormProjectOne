@@ -1,0 +1,9 @@
+Livres Physiques :
+LivrePhysique {id = 1, titre = 'Le tartuffe', auteur = 'Jean Baptiste Poquelin (Molière)', isNumerique = false}
+LivrePhysique {id = 2, titre = 'Les fourberies de scapin', auteur = 'Jean Baptiste Poquelin (Molière)', isNumerique = false}
+LivrePhysique {id = 3, titre = 'Bleach', auteur = 'Tite Kubo)', isNumerique = false}
+LivrePhysique {id = 4, titre = 'L'art de la guerre', auteur = 'Sun-Tzu', isNumerique = false}
+
+Livres Numériques :
+LivreNumerique {id = 1, titre = 'Tom Sawyer', auteur = 'Mark Twain', isNumerique = true}
+LivreNumerique {id = 2, titre = 'Fleurs du mal', auteur = 'Charles Beaudelaire', isNumerique = true}

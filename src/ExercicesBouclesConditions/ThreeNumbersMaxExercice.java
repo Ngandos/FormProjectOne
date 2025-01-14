@@ -20,17 +20,11 @@ public class ThreeNumbersMaxExercice {
 
         int nbr3 = scanner.nextInt();
 
-        if (nbr1 > nbr2 && nbr1 > nbr3) {
+        int maxValue = Math.max(nbr1, Math.max(nbr2, nbr3));
 
-            System.out.println("la plus grande valeur de votre saisie est : " + nbr1);
+        System.out.println("La plus grande valeur saisie est : " + maxValue);
 
-        } else if (nbr2 > nbr1 && nbr2 > nbr3) {
-
-            System.out.println("La plus grande valur de vos saisies est : " + nbr2);
-
-        } else {
-
-            System.out.println("La plus grande valur de vos saisies est : " + nbr3);
-        }
+        scanner.close();
     }
+
 }
